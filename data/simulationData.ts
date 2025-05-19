@@ -1,0 +1,478 @@
+export const simulationScenarios = {
+  Retail: {
+    id: "retail-ransomware",
+    title: "Ransomware Attack",
+    description:
+      "A sophisticated ransomware attack encrypts critical business data and systems, demanding payment for decryption keys.",
+    affectedComponents: ["payment-processing", "inventory-management", "ecommerce-platform", "customer-data"],
+    protectedComponents: ["payment-processing", "inventory-management", "ecommerce-platform"],
+    componentImpacts: {
+      "payment-processing": {
+        financialImpact: "$125,000",
+        recoveryTime: "7 days",
+        description:
+          "Payment systems are encrypted, preventing transaction processing and causing significant revenue loss.",
+      },
+      "inventory-management": {
+        financialImpact: "$85,000",
+        recoveryTime: "5 days",
+        description: "Inventory systems are inaccessible, disrupting supply chain and causing stockouts.",
+      },
+      "ecommerce-platform": {
+        financialImpact: "$150,000",
+        recoveryTime: "6 days",
+        description: "Online store is completely down, resulting in lost sales and customer frustration.",
+      },
+      "customer-data": {
+        financialImpact: "$200,000",
+        recoveryTime: "10 days",
+        description:
+          "Customer data is encrypted, potentially compromised, requiring notification and monitoring services.",
+      },
+    },
+    componentRisks: {
+      "payment-processing": "high",
+      "customer-data": "high",
+      "inventory-management": "medium",
+      "ecommerce-platform": "high",
+      "physical-locations": "low",
+      "employee-systems": "medium",
+    },
+    frequency: "High",
+    averageCost: "$560,000",
+    industryImpact: {
+      Retail: "High",
+      Manufacturing: "High",
+      Healthcare: "Critical",
+      Technology: "Medium",
+      "Professional Services": "Medium",
+    },
+    businessImpacts: [
+      "Business Interruption",
+      "Data Recovery Costs",
+      "Forensic Investigation",
+      "Potential Regulatory Fines",
+      "Customer Notification Costs",
+    ],
+    realWorldExample:
+      "A mid-sized retailer experienced a ransomware attack that encrypted their inventory management and point-of-sale systems. The business was unable to process transactions for 5 days, resulting in approximately $350,000 in lost revenue and $400,000 in recovery costs.",
+    industryBenchmark: {
+      percentageWithCoverage: 78,
+      typicalCoverageAmount: "$1,000,000",
+    },
+    totalFinancialImpact: "$560,000",
+    businessInterruption: "$275,000",
+    reputationalDamage: "Moderate",
+    recoveryTime: "7-10 days",
+    protectedFinancialImpact: "$84,000",
+    protectedBusinessInterruption: "$41,250",
+    protectedRecoveryTime: "2-3 days",
+  },
+  Manufacturing: {
+    id: "manufacturing-business-email",
+    title: "Business Email Compromise",
+    description:
+      "Attackers gain access to corporate email accounts and use them to conduct fraudulent wire transfers or steal sensitive information.",
+    affectedComponents: ["supply-chain", "intellectual-property", "employee-systems", "customer-data"],
+    protectedComponents: ["supply-chain", "intellectual-property"],
+    componentImpacts: {
+      "supply-chain": {
+        financialImpact: "$95,000",
+        recoveryTime: "4 days",
+        description: "Fraudulent orders to suppliers and disrupted logistics communications.",
+      },
+      "intellectual-property": {
+        financialImpact: "$250,000",
+        recoveryTime: "Ongoing",
+        description: "Theft of proprietary designs and manufacturing processes.",
+      },
+      "employee-systems": {
+        financialImpact: "$75,000",
+        recoveryTime: "5 days",
+        description: "Compromised employee accounts requiring password resets and security training.",
+      },
+      "customer-data": {
+        financialImpact: "$120,000",
+        recoveryTime: "7 days",
+        description: "Customer information exposed, requiring notification and potential legal action.",
+      },
+    },
+    componentRisks: {
+      "supply-chain": "high",
+      "intellectual-property": "high",
+      "employee-systems": "medium",
+      "customer-data": "medium",
+      "finance-department": "high",
+    },
+    frequency: "High",
+    averageCost: "$540,000",
+    industryImpact: {
+      Retail: "Medium",
+      Manufacturing: "High",
+      Healthcare: "Medium",
+      Technology: "Medium",
+      "Professional Services": "High",
+    },
+    businessImpacts: [
+      "Financial Theft",
+      "Data Exfiltration",
+      "Intellectual Property Theft",
+      "Remediation Costs",
+      "Business Relationship Damage",
+    ],
+    realWorldExample:
+      "A manufacturing company's finance department received what appeared to be a legitimate email from their CEO requesting an urgent wire transfer to a new supplier. The company transferred $175,000 before discovering the fraud. Additionally, attackers exfiltrated proprietary designs valued at approximately $250,000.",
+    industryBenchmark: {
+      percentageWithCoverage: 65,
+      typicalCoverageAmount: "$750,000",
+    },
+    totalFinancialImpact: "$540,000",
+    businessInterruption: "$170,000",
+    reputationalDamage: "Moderate",
+    recoveryTime: "5-7 days",
+    protectedFinancialImpact: "$81,000",
+    protectedBusinessInterruption: "$25,500",
+    protectedRecoveryTime: "1-2 days",
+  },
+  Healthcare: {
+    id: "healthcare-data-breach",
+    title: "Patient Data Breach",
+    description: "Unauthorized access to patient databases results in the theft of protected health information (PHI).",
+    affectedComponents: ["patient-records", "payment-processing", "telemedicine-platform", "pharmacy-systems"],
+    protectedComponents: ["patient-records", "payment-processing"],
+    componentImpacts: {
+      "patient-records": {
+        financialImpact: "$350,000",
+        recoveryTime: "14 days",
+        description:
+          "Patient health records exposed, requiring extensive notification, monitoring, and potential regulatory penalties.",
+      },
+      "payment-processing": {
+        financialImpact: "$125,000",
+        recoveryTime: "7 days",
+        description:
+          "Payment information compromised, requiring investigation and potential reissuance of payment methods.",
+      },
+      "telemedicine-platform": {
+        financialImpact: "$175,000",
+        recoveryTime: "10 days",
+        description: "Telemedicine services disrupted, affecting patient care and requiring security enhancements.",
+      },
+      "pharmacy-systems": {
+        financialImpact: "$200,000",
+        recoveryTime: "12 days",
+        description:
+          "Prescription and medication data compromised, requiring notification and potential regulatory action.",
+      },
+    },
+    componentRisks: {
+      "patient-records": "critical",
+      "payment-processing": "high",
+      "telemedicine-platform": "high",
+      "pharmacy-systems": "high",
+      "medical-devices": "medium",
+    },
+    frequency: "Medium",
+    averageCost: "$850,000",
+    industryImpact: {
+      Retail: "Medium",
+      Manufacturing: "Low",
+      Healthcare: "Critical",
+      Technology: "Medium",
+      "Professional Services": "Medium",
+    },
+    businessImpacts: [
+      "Regulatory Fines (HIPAA)",
+      "Patient Notification Costs",
+      "Credit Monitoring Services",
+      "Legal Expenses",
+      "Reputational Damage",
+      "Business Interruption",
+    ],
+    realWorldExample:
+      "A healthcare provider experienced a breach affecting 50,000 patient records. The organization incurred costs for forensic investigation ($150,000), patient notification and credit monitoring ($500,000), legal defense ($300,000), and regulatory fines ($250,000).",
+    industryBenchmark: {
+      percentageWithCoverage: 82,
+      typicalCoverageAmount: "$2,000,000",
+    },
+    totalFinancialImpact: "$850,000",
+    businessInterruption: "$300,000",
+    reputationalDamage: "Severe",
+    recoveryTime: "10-14 days",
+    protectedFinancialImpact: "$127,500",
+    protectedBusinessInterruption: "$45,000",
+    protectedRecoveryTime: "3-5 days",
+  },
+  Technology: {
+    id: "technology-ddos",
+    title: "DDoS Attack & Service Disruption",
+    description:
+      "A distributed denial-of-service attack overwhelms your cloud infrastructure, taking down services and affecting customers.",
+    affectedComponents: ["cloud-infrastructure", "development-systems", "payment-systems", "customer-data"],
+    protectedComponents: ["cloud-infrastructure", "payment-systems"],
+    componentImpacts: {
+      "cloud-infrastructure": {
+        financialImpact: "$275,000",
+        recoveryTime: "3 days",
+        description: "Cloud services unavailable, causing widespread outages for customers and revenue loss.",
+      },
+      "development-systems": {
+        financialImpact: "$120,000",
+        recoveryTime: "2 days",
+        description: "Development environments affected, delaying product updates and fixes.",
+      },
+      "payment-systems": {
+        financialImpact: "$150,000",
+        recoveryTime: "3 days",
+        description: "Billing systems disrupted, affecting revenue collection and subscription management.",
+      },
+      "customer-data": {
+        financialImpact: "$100,000",
+        recoveryTime: "4 days",
+        description: "Customer portals inaccessible, requiring communication and potential service credits.",
+      },
+    },
+    componentRisks: {
+      "cloud-infrastructure": "critical",
+      "development-systems": "medium",
+      "payment-systems": "high",
+      "customer-data": "medium",
+      "network-security": "high",
+    },
+    frequency: "High",
+    averageCost: "$645,000",
+    industryImpact: {
+      Retail: "Medium",
+      Manufacturing: "Low",
+      Healthcare: "Medium",
+      Technology: "Critical",
+      "Professional Services": "Medium",
+    },
+    businessImpacts: [
+      "Service Unavailability",
+      "Revenue Loss",
+      "SLA Violations",
+      "Customer Compensation",
+      "Mitigation Costs",
+      "Reputational Damage",
+    ],
+    realWorldExample:
+      "A SaaS provider experienced a sophisticated DDoS attack that took their services offline for 36 hours. The company lost approximately $350,000 in revenue, spent $175,000 on mitigation, and provided $120,000 in service credits to affected customers.",
+    industryBenchmark: {
+      percentageWithCoverage: 75,
+      typicalCoverageAmount: "$1,500,000",
+    },
+    totalFinancialImpact: "$645,000",
+    businessInterruption: "$425,000",
+    reputationalDamage: "Severe",
+    recoveryTime: "3-5 days",
+    protectedFinancialImpact: "$96,750",
+    protectedBusinessInterruption: "$63,750",
+    protectedRecoveryTime: "1-2 days",
+  },
+  "Professional Services": {
+    id: "professional-phishing",
+    title: "Targeted Phishing & Data Theft",
+    description:
+      "A sophisticated phishing campaign targets employees to gain access to confidential client information and financial accounts.",
+    affectedComponents: ["client-data", "document-management", "communication-systems", "payment-processing"],
+    protectedComponents: ["client-data", "payment-processing"],
+    componentImpacts: {
+      "client-data": {
+        financialImpact: "$275,000",
+        recoveryTime: "10 days",
+        description:
+          "Confidential client information exposed, requiring notification, potential legal action, and relationship damage.",
+      },
+      "document-management": {
+        financialImpact: "$150,000",
+        recoveryTime: "7 days",
+        description:
+          "Sensitive documents accessed, requiring security review and potential intellectual property exposure.",
+      },
+      "communication-systems": {
+        financialImpact: "$95,000",
+        recoveryTime: "5 days",
+        description: "Email and messaging systems compromised, requiring security overhaul and monitoring.",
+      },
+      "payment-processing": {
+        financialImpact: "$180,000",
+        recoveryTime: "6 days",
+        description: "Financial accounts accessed, potentially leading to fraudulent transactions and financial loss.",
+      },
+    },
+    componentRisks: {
+      "client-data": "critical",
+      "document-management": "high",
+      "communication-systems": "medium",
+      "payment-processing": "high",
+      "employee-training": "high",
+    },
+    frequency: "High",
+    averageCost: "$700,000",
+    industryImpact: {
+      Retail: "Medium",
+      Manufacturing: "Medium",
+      Healthcare: "High",
+      Technology: "High",
+      "Professional Services": "Critical",
+    },
+    businessImpacts: [
+      "Client Data Exposure",
+      "Financial Theft",
+      "Confidentiality Breaches",
+      "Regulatory Investigations",
+      "Client Relationship Damage",
+      "Reputational Harm",
+    ],
+    realWorldExample:
+      "A law firm fell victim to a targeted phishing attack that compromised sensitive client information for over 200 clients. The firm incurred costs for forensic investigation ($125,000), client notification ($200,000), legal defense ($250,000), and lost approximately $175,000 in billable hours during recovery.",
+    industryBenchmark: {
+      percentageWithCoverage: 70,
+      typicalCoverageAmount: "$1,000,000",
+    },
+    totalFinancialImpact: "$700,000",
+    businessInterruption: "$225,000",
+    reputationalDamage: "Severe",
+    recoveryTime: "7-10 days",
+    protectedFinancialImpact: "$105,000",
+    protectedBusinessInterruption: "$33,750",
+    protectedRecoveryTime: "2-3 days",
+  },
+  Energy: {
+    id: "energy-infrastructure-attack",
+    title: "Critical Infrastructure Attack",
+    description:
+      "A cyberattack targets operational technology (OT) systems, disrupting energy production and distribution.",
+    affectedComponents: ["control-systems", "network-infrastructure", "data-storage", "communication-systems"],
+    protectedComponents: ["control-systems", "network-infrastructure"],
+    componentImpacts: {
+      "control-systems": {
+        financialImpact: "$450,000",
+        recoveryTime: "14 days",
+        description: "Disruption of energy production and distribution, leading to widespread outages.",
+      },
+      "network-infrastructure": {
+        financialImpact: "$250,000",
+        recoveryTime: "10 days",
+        description: "Compromised network devices, hindering communication and control of critical systems.",
+      },
+      "data-storage": {
+        financialImpact: "$150,000",
+        recoveryTime: "7 days",
+        description: "Loss of operational data, delaying recovery efforts and impacting decision-making.",
+      },
+      "communication-systems": {
+        financialImpact: "$100,000",
+        recoveryTime: "5 days",
+        description: "Disrupted communication channels, affecting coordination and response to the incident.",
+      },
+    },
+    componentRisks: {
+      "control-systems": "critical",
+      "network-infrastructure": "critical",
+      "data-storage": "high",
+      "communication-systems": "medium",
+      "physical-security": "high",
+    },
+    frequency: "Low",
+    averageCost: "$950,000",
+    industryImpact: {
+      Retail: "High",
+      Manufacturing: "High",
+      Healthcare: "Critical",
+      Technology: "High",
+      "Professional Services": "High",
+      Energy: "Critical",
+    },
+    businessImpacts: [
+      "Service Disruption",
+      "Infrastructure Damage",
+      "Regulatory Penalties",
+      "Environmental Damage",
+      "Reputational Harm",
+    ],
+    realWorldExample:
+      "A power grid experienced a cyberattack that disrupted electricity distribution to a major metropolitan area. The incident resulted in widespread blackouts, impacting businesses, hospitals, and critical infrastructure. Recovery efforts took several days and cost millions of dollars.",
+    industryBenchmark: {
+      percentageWithCoverage: 90,
+      typicalCoverageAmount: "$5,000,000",
+    },
+    totalFinancialImpact: "$950,000",
+    businessInterruption: "$500,000",
+    reputationalDamage: "Severe",
+    recoveryTime: "10-14 days",
+    protectedFinancialImpact: "$142,500",
+    protectedBusinessInterruption: "$75,000",
+    protectedRecoveryTime: "3-5 days",
+  },
+  Government: {
+    id: "government-data-leak",
+    title: "Government Data Leak",
+    description:
+      "Sensitive government data is leaked to the public, compromising national security and citizen privacy.",
+    affectedComponents: ["citizen-database", "classified-documents", "communication-networks", "financial-records"],
+    protectedComponents: ["citizen-database", "classified-documents"],
+    componentImpacts: {
+      "citizen-database": {
+        financialImpact: "$600,000",
+        recoveryTime: "30 days",
+        description:
+          "Personal information of citizens exposed, requiring notification, credit monitoring, and legal action.",
+      },
+      "classified-documents": {
+        financialImpact: "$500,000",
+        recoveryTime: "Ongoing",
+        description:
+          "Compromised classified information, potentially impacting national security and international relations.",
+      },
+      "communication-networks": {
+        financialImpact: "$200,000",
+        recoveryTime: "14 days",
+        description: "Compromised communication channels, affecting government operations and emergency response.",
+      },
+      "financial-records": {
+        financialImpact: "$300,000",
+        recoveryTime: "21 days",
+        description: "Exposure of government financial data, potentially leading to fraud and misuse of funds.",
+      },
+    },
+    componentRisks: {
+      "citizen-database": "critical",
+      "classified-documents": "critical",
+      "communication-networks": "high",
+      "financial-records": "high",
+      "insider-threat": "high",
+    },
+    frequency: "Low",
+    averageCost: "$1,600,000",
+    industryImpact: {
+      Retail: "High",
+      Manufacturing: "High",
+      Healthcare: "Critical",
+      Technology: "High",
+      "Professional Services": "High",
+      Government: "Critical",
+    },
+    businessImpacts: [
+      "National Security Threat",
+      "Citizen Privacy Violation",
+      "Legal and Regulatory Penalties",
+      "Reputational Damage",
+      "International Relations Impact",
+    ],
+    realWorldExample:
+      "A government agency experienced a data breach that resulted in the leak of sensitive citizen information, including social security numbers, addresses, and medical records. The incident triggered public outrage, legal action, and a significant loss of trust in the government.",
+    industryBenchmark: {
+      percentageWithCoverage: 95,
+      typicalCoverageAmount: "$10,000,000",
+    },
+    totalFinancialImpact: "$1,600,000",
+    businessInterruption: "$800,000",
+    reputationalDamage: "Catastrophic",
+    recoveryTime: "30+ days",
+    protectedFinancialImpact: "$240,000",
+    protectedBusinessInterruption: "$120,000",
+    protectedRecoveryTime: "7-10 days",
+  },
+}
